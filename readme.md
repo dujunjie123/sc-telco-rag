@@ -4,6 +4,7 @@ Challenge" (https://zindi.africa/competitions/specializing-large-language-models
 The solution is created in Python, using Microsoft's Phi-2 model (https://huggingface.co/microsoft/phi-2).
 It contains prompt engineering,RAG application and model fine-tuning.
 
+Please read the design document:The Telco-RAG Solution.docx
 
 ## How to run
 The solution was created using Python version 3.11.0 on centos 7.
