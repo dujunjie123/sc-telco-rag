@@ -1,0 +1,13 @@
+### Note: DO NOT use quantized model or quantization_bit when merging lora adapters
+
+### model
+model_name_or_path: phi2/model_sft_no_rag_from_scratch_phi_prompt/
+adapter_name_or_path: train_2024-07-26-15-14-48
+template: phi
+finetuning_type: lora
+
+### export
+export_dir: phi2/model_sft_with_rag_by_no_rag_phi_prompt/
+export_size: 2
+export_device: cpu
+export_legacy_format: false
