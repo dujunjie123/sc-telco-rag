@@ -1,0 +1,346 @@
+[INFO|parser.py:344] 2024-07-26 14:30:33,940 >> Process rank: 0, device: cuda:0, n_gpu: 1, distributed training: False, compute dtype: torch.bfloat16
+
+[INFO|tokenization_utils_base.py:2287] 2024-07-26 14:30:33,958 >> loading file vocab.json
+
+[INFO|tokenization_utils_base.py:2287] 2024-07-26 14:30:33,959 >> loading file merges.txt
+
+[INFO|tokenization_utils_base.py:2287] 2024-07-26 14:30:33,959 >> loading file tokenizer.json
+
+[INFO|tokenization_utils_base.py:2287] 2024-07-26 14:30:33,960 >> loading file added_tokens.json
+
+[INFO|tokenization_utils_base.py:2287] 2024-07-26 14:30:33,960 >> loading file special_tokens_map.json
+
+[INFO|tokenization_utils_base.py:2287] 2024-07-26 14:30:33,960 >> loading file tokenizer_config.json
+
+[INFO|tokenization_utils_base.py:2533] 2024-07-26 14:30:34,073 >> Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+
+[INFO|template.py:372] 2024-07-26 14:30:34,074 >> Add pad token: <|endoftext|>
+
+[INFO|loader.py:52] 2024-07-26 14:30:34,075 >> Loading dataset train_data_4_sft_llm_chat_no_rag_4_phi2.json...
+
+[INFO|configuration_utils.py:731] 2024-07-26 14:30:37,902 >> loading configuration file /data/LLMs/phi2/config.json
+
+[INFO|configuration_utils.py:731] 2024-07-26 14:30:37,906 >> loading configuration file /data/LLMs/phi2/config.json
+
+[INFO|configuration_utils.py:800] 2024-07-26 14:30:37,909 >> Model config PhiConfig {
+  "_name_or_path": "/data/LLMs/phi2/",
+  "activation_function": "gelu_new",
+  "architectures": [
+    "PhiForCausalLM"
+  ],
+  "attn_pdrop": 0.0,
+  "auto_map": {
+    "AutoConfig": "configuration_phi.PhiConfig",
+    "AutoModelForCausalLM": "modeling_phi.PhiForCausalLM"
+  },
+  "embd_pdrop": 0.0,
+  "flash_attn": false,
+  "flash_rotary": false,
+  "fused_dense": false,
+  "img_processor": null,
+  "initializer_range": 0.02,
+  "layer_norm_epsilon": 1e-05,
+  "model_type": "phi-msft",
+  "n_embd": 2560,
+  "n_head": 32,
+  "n_head_kv": null,
+  "n_inner": null,
+  "n_layer": 32,
+  "n_positions": 2048,
+  "resid_pdrop": 0.1,
+  "rotary_dim": 32,
+  "tie_word_embeddings": false,
+  "torch_dtype": "float16",
+  "transformers_version": "4.43.1",
+  "vocab_size": 51200
+}
+
+
+[INFO|modeling_utils.py:3618] 2024-07-26 14:30:37,974 >> loading weights file /data/LLMs/phi2/model.safetensors.index.json
+
+[INFO|modeling_utils.py:1569] 2024-07-26 14:30:37,975 >> Instantiating PhiForCausalLM model under default dtype torch.bfloat16.
+
+[INFO|configuration_utils.py:1038] 2024-07-26 14:30:37,977 >> Generate config GenerationConfig {}
+
+
+[INFO|configuration_utils.py:1038] 2024-07-26 14:30:37,978 >> Generate config GenerationConfig {}
+
+
+[INFO|modeling_utils.py:4450] 2024-07-26 14:30:40,783 >> All model checkpoint weights were used when initializing PhiForCausalLM.
+
+
+[INFO|modeling_utils.py:4458] 2024-07-26 14:30:40,783 >> All the weights of PhiForCausalLM were initialized from the model checkpoint at /data/LLMs/phi2/.
+If your task is similar to the task the model of the checkpoint was trained on, you can already use PhiForCausalLM for predictions without further training.
+
+[INFO|configuration_utils.py:991] 2024-07-26 14:30:40,786 >> loading configuration file /data/LLMs/phi2/generation_config.json
+
+[INFO|configuration_utils.py:1038] 2024-07-26 14:30:40,786 >> Generate config GenerationConfig {}
+
+
+[WARNING|checkpointing.py:96] 2024-07-26 14:30:40,792 >> Current model does not support gradient checkpointing.
+
+[INFO|attention.py:86] 2024-07-26 14:30:40,792 >> Using vanilla attention implementation.
+
+[INFO|adapter.py:302] 2024-07-26 14:30:40,792 >> Upcasting trainable params to float32.
+
+[INFO|adapter.py:158] 2024-07-26 14:30:40,792 >> Fine-tuning method: LoRA
+
+[INFO|misc.py:51] 2024-07-26 14:30:40,793 >> Found linear modules: out_proj,fc1,Wqkv,fc2
+
+[INFO|loader.py:196] 2024-07-26 14:30:41,029 >> trainable params: 10,485,760 || all params: 2,790,169,600 || trainable%: 0.3758
+
+[WARNING|other.py:349] 2024-07-26 14:30:41,034 >> Detected kernel version 3.10.0, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+
+[INFO|trainer.py:648] 2024-07-26 14:30:41,043 >> Using auto half precision backend
+
+[INFO|trainer.py:2134] 2024-07-26 14:30:41,680 >> ***** Running training *****
+
+[INFO|trainer.py:2135] 2024-07-26 14:30:41,680 >>   Num examples = 10,000
+
+[INFO|trainer.py:2136] 2024-07-26 14:30:41,680 >>   Num Epochs = 3
+
+[INFO|trainer.py:2137] 2024-07-26 14:30:41,681 >>   Instantaneous batch size per device = 8
+
+[INFO|trainer.py:2140] 2024-07-26 14:30:41,681 >>   Total train batch size (w. parallel, distributed & accumulation) = 64
+
+[INFO|trainer.py:2141] 2024-07-26 14:30:41,681 >>   Gradient Accumulation steps = 8
+
+[INFO|trainer.py:2142] 2024-07-26 14:30:41,681 >>   Total optimization steps = 468
+
+[INFO|trainer.py:2143] 2024-07-26 14:30:41,683 >>   Number of trainable parameters = 10,485,760
+
+[INFO|callbacks.py:310] 2024-07-26 14:30:55,002 >> {'loss': 5.4726, 'learning_rate': 4.9986e-05, 'epoch': 0.03, 'throughput': 4291.99}
+
+[INFO|callbacks.py:310] 2024-07-26 14:31:07,668 >> {'loss': 3.3784, 'learning_rate': 4.9944e-05, 'epoch': 0.06, 'throughput': 4424.10}
+
+[INFO|callbacks.py:310] 2024-07-26 14:31:19,857 >> {'loss': 1.2174, 'learning_rate': 4.9873e-05, 'epoch': 0.10, 'throughput': 4558.90}
+
+[INFO|callbacks.py:310] 2024-07-26 14:31:31,415 >> {'loss': 0.5288, 'learning_rate': 4.9775e-05, 'epoch': 0.13, 'throughput': 4635.69}
+
+[INFO|callbacks.py:310] 2024-07-26 14:31:43,959 >> {'loss': 0.4074, 'learning_rate': 4.9649e-05, 'epoch': 0.16, 'throughput': 4652.54}
+
+[INFO|callbacks.py:310] 2024-07-26 14:31:56,331 >> {'loss': 0.3930, 'learning_rate': 4.9495e-05, 'epoch': 0.19, 'throughput': 4664.21}
+
+[INFO|callbacks.py:310] 2024-07-26 14:32:08,827 >> {'loss': 0.3811, 'learning_rate': 4.9313e-05, 'epoch': 0.22, 'throughput': 4687.93}
+
+[INFO|callbacks.py:310] 2024-07-26 14:32:21,303 >> {'loss': 0.3793, 'learning_rate': 4.9104e-05, 'epoch': 0.26, 'throughput': 4698.97}
+
+[INFO|callbacks.py:310] 2024-07-26 14:32:33,785 >> {'loss': 0.3849, 'learning_rate': 4.8868e-05, 'epoch': 0.29, 'throughput': 4694.15}
+
+[INFO|callbacks.py:310] 2024-07-26 14:32:46,097 >> {'loss': 0.3570, 'learning_rate': 4.8605e-05, 'epoch': 0.32, 'throughput': 4704.95}
+
+[INFO|callbacks.py:310] 2024-07-26 14:32:58,545 >> {'loss': 0.3552, 'learning_rate': 4.8315e-05, 'epoch': 0.35, 'throughput': 4721.72}
+
+[INFO|callbacks.py:310] 2024-07-26 14:33:10,516 >> {'loss': 0.3551, 'learning_rate': 4.7999e-05, 'epoch': 0.38, 'throughput': 4721.64}
+
+[INFO|callbacks.py:310] 2024-07-26 14:33:22,821 >> {'loss': 0.3433, 'learning_rate': 4.7658e-05, 'epoch': 0.42, 'throughput': 4710.58}
+
+[INFO|callbacks.py:310] 2024-07-26 14:33:35,303 >> {'loss': 0.3309, 'learning_rate': 4.7290e-05, 'epoch': 0.45, 'throughput': 4711.43}
+
+[INFO|callbacks.py:310] 2024-07-26 14:33:47,798 >> {'loss': 0.3337, 'learning_rate': 4.6898e-05, 'epoch': 0.48, 'throughput': 4701.17}
+
+[INFO|callbacks.py:310] 2024-07-26 14:33:59,961 >> {'loss': 0.3301, 'learning_rate': 4.6481e-05, 'epoch': 0.51, 'throughput': 4712.33}
+
+[INFO|callbacks.py:310] 2024-07-26 14:34:11,429 >> {'loss': 0.3182, 'learning_rate': 4.6040e-05, 'epoch': 0.54, 'throughput': 4726.55}
+
+[INFO|callbacks.py:310] 2024-07-26 14:34:24,035 >> {'loss': 0.3364, 'learning_rate': 4.5575e-05, 'epoch': 0.58, 'throughput': 4723.97}
+
+[INFO|callbacks.py:310] 2024-07-26 14:34:36,207 >> {'loss': 0.2994, 'learning_rate': 4.5086e-05, 'epoch': 0.61, 'throughput': 4729.57}
+
+[INFO|callbacks.py:310] 2024-07-26 14:34:48,428 >> {'loss': 0.3139, 'learning_rate': 4.4576e-05, 'epoch': 0.64, 'throughput': 4728.25}
+
+[INFO|trainer.py:3503] 2024-07-26 14:34:48,429 >> Saving model checkpoint to saves/Phi-2-2.7B/lora/train_2024-07-26-14-29-06/checkpoint-100
+
+[INFO|tokenization_utils_base.py:2702] 2024-07-26 14:34:48,517 >> tokenizer config file saved in saves/Phi-2-2.7B/lora/train_2024-07-26-14-29-06/checkpoint-100/tokenizer_config.json
+
+[INFO|tokenization_utils_base.py:2711] 2024-07-26 14:34:48,517 >> Special tokens file saved in saves/Phi-2-2.7B/lora/train_2024-07-26-14-29-06/checkpoint-100/special_tokens_map.json
+
+[INFO|callbacks.py:310] 2024-07-26 14:35:00,638 >> {'loss': 0.3423, 'learning_rate': 4.4043e-05, 'epoch': 0.67, 'throughput': 4729.96}
+
+[INFO|callbacks.py:310] 2024-07-26 14:35:13,064 >> {'loss': 0.3168, 'learning_rate': 4.3489e-05, 'epoch': 0.70, 'throughput': 4732.00}
+
+[INFO|callbacks.py:310] 2024-07-26 14:35:25,065 >> {'loss': 0.3450, 'learning_rate': 4.2913e-05, 'epoch': 0.74, 'throughput': 4735.77}
+
+[INFO|callbacks.py:310] 2024-07-26 14:35:37,384 >> {'loss': 0.2848, 'learning_rate': 4.2318e-05, 'epoch': 0.77, 'throughput': 4742.79}
+
+[INFO|callbacks.py:310] 2024-07-26 14:35:49,623 >> {'loss': 0.3113, 'learning_rate': 4.1703e-05, 'epoch': 0.80, 'throughput': 4745.08}
+
+[INFO|callbacks.py:310] 2024-07-26 14:36:01,640 >> {'loss': 0.3317, 'learning_rate': 4.1070e-05, 'epoch': 0.83, 'throughput': 4744.89}
+
+[INFO|callbacks.py:310] 2024-07-26 14:36:13,850 >> {'loss': 0.3424, 'learning_rate': 4.0418e-05, 'epoch': 0.86, 'throughput': 4748.70}
+
+[INFO|callbacks.py:310] 2024-07-26 14:36:25,718 >> {'loss': 0.3299, 'learning_rate': 3.9749e-05, 'epoch': 0.90, 'throughput': 4752.49}
+
+[INFO|callbacks.py:310] 2024-07-26 14:36:37,863 >> {'loss': 0.3348, 'learning_rate': 3.9063e-05, 'epoch': 0.93, 'throughput': 4758.81}
+
+[INFO|callbacks.py:310] 2024-07-26 14:36:49,548 >> {'loss': 0.3049, 'learning_rate': 3.8362e-05, 'epoch': 0.96, 'throughput': 4765.96}
+
+[INFO|callbacks.py:310] 2024-07-26 14:37:01,181 >> {'loss': 0.3363, 'learning_rate': 3.7645e-05, 'epoch': 0.99, 'throughput': 4773.51}
+
+[INFO|callbacks.py:310] 2024-07-26 14:37:13,102 >> {'loss': 0.3093, 'learning_rate': 3.6914e-05, 'epoch': 1.02, 'throughput': 4779.69}
+
+[INFO|callbacks.py:310] 2024-07-26 14:37:24,823 >> {'loss': 0.3026, 'learning_rate': 3.6170e-05, 'epoch': 1.06, 'throughput': 4785.04}
+
+[INFO|callbacks.py:310] 2024-07-26 14:37:36,472 >> {'loss': 0.2982, 'learning_rate': 3.5413e-05, 'epoch': 1.09, 'throughput': 4790.14}
+
+[INFO|callbacks.py:310] 2024-07-26 14:37:47,999 >> {'loss': 0.3216, 'learning_rate': 3.4645e-05, 'epoch': 1.12, 'throughput': 4794.67}
+
+[INFO|callbacks.py:310] 2024-07-26 14:37:59,379 >> {'loss': 0.3083, 'learning_rate': 3.3865e-05, 'epoch': 1.15, 'throughput': 4798.99}
+
+[INFO|callbacks.py:310] 2024-07-26 14:38:11,662 >> {'loss': 0.2965, 'learning_rate': 3.3076e-05, 'epoch': 1.18, 'throughput': 4802.54}
+
+[INFO|callbacks.py:310] 2024-07-26 14:38:23,283 >> {'loss': 0.2710, 'learning_rate': 3.2277e-05, 'epoch': 1.22, 'throughput': 4808.35}
+
+[INFO|callbacks.py:310] 2024-07-26 14:38:35,000 >> {'loss': 0.2906, 'learning_rate': 3.1470e-05, 'epoch': 1.25, 'throughput': 4812.09}
+
+[INFO|callbacks.py:310] 2024-07-26 14:38:47,083 >> {'loss': 0.2826, 'learning_rate': 3.0656e-05, 'epoch': 1.28, 'throughput': 4812.30}
+
+[INFO|trainer.py:3503] 2024-07-26 14:38:47,083 >> Saving model checkpoint to saves/Phi-2-2.7B/lora/train_2024-07-26-14-29-06/checkpoint-200
+
+[INFO|tokenization_utils_base.py:2702] 2024-07-26 14:38:47,158 >> tokenizer config file saved in saves/Phi-2-2.7B/lora/train_2024-07-26-14-29-06/checkpoint-200/tokenizer_config.json
+
+[INFO|tokenization_utils_base.py:2711] 2024-07-26 14:38:47,158 >> Special tokens file saved in saves/Phi-2-2.7B/lora/train_2024-07-26-14-29-06/checkpoint-200/special_tokens_map.json
+
+[INFO|callbacks.py:310] 2024-07-26 14:38:59,012 >> {'loss': 0.2991, 'learning_rate': 2.9836e-05, 'epoch': 1.31, 'throughput': 4812.55}
+
+[INFO|callbacks.py:310] 2024-07-26 14:39:11,255 >> {'loss': 0.3003, 'learning_rate': 2.9010e-05, 'epoch': 1.34, 'throughput': 4814.48}
+
+[INFO|callbacks.py:310] 2024-07-26 14:39:23,633 >> {'loss': 0.2841, 'learning_rate': 2.8180e-05, 'epoch': 1.38, 'throughput': 4819.00}
+
+[INFO|callbacks.py:310] 2024-07-26 14:39:35,145 >> {'loss': 0.3275, 'learning_rate': 2.7346e-05, 'epoch': 1.41, 'throughput': 4822.27}
+
+[INFO|callbacks.py:310] 2024-07-26 14:39:47,000 >> {'loss': 0.3145, 'learning_rate': 2.6509e-05, 'epoch': 1.44, 'throughput': 4825.06}
+
+[INFO|callbacks.py:310] 2024-07-26 14:39:58,682 >> {'loss': 0.2966, 'learning_rate': 2.5671e-05, 'epoch': 1.47, 'throughput': 4828.65}
+
+[INFO|callbacks.py:310] 2024-07-26 14:40:09,727 >> {'loss': 0.3077, 'learning_rate': 2.4832e-05, 'epoch': 1.50, 'throughput': 4830.98}
+
+[INFO|callbacks.py:310] 2024-07-26 14:40:21,470 >> {'loss': 0.2896, 'learning_rate': 2.3993e-05, 'epoch': 1.54, 'throughput': 4833.03}
+
+[INFO|callbacks.py:310] 2024-07-26 14:40:32,852 >> {'loss': 0.3164, 'learning_rate': 2.3156e-05, 'epoch': 1.57, 'throughput': 4835.68}
+
+[INFO|callbacks.py:310] 2024-07-26 14:40:44,654 >> {'loss': 0.3072, 'learning_rate': 2.2320e-05, 'epoch': 1.60, 'throughput': 4836.88}
+
+[INFO|callbacks.py:310] 2024-07-26 14:40:56,869 >> {'loss': 0.2994, 'learning_rate': 2.1487e-05, 'epoch': 1.63, 'throughput': 4836.34}
+
+[INFO|callbacks.py:310] 2024-07-26 14:41:08,431 >> {'loss': 0.3013, 'learning_rate': 2.0659e-05, 'epoch': 1.66, 'throughput': 4838.41}
+
+[INFO|callbacks.py:310] 2024-07-26 14:41:20,230 >> {'loss': 0.2730, 'learning_rate': 1.9835e-05, 'epoch': 1.70, 'throughput': 4840.31}
+
+[INFO|callbacks.py:310] 2024-07-26 14:41:32,272 >> {'loss': 0.2665, 'learning_rate': 1.9017e-05, 'epoch': 1.73, 'throughput': 4842.11}
+
+[INFO|callbacks.py:310] 2024-07-26 14:41:44,526 >> {'loss': 0.2852, 'learning_rate': 1.8206e-05, 'epoch': 1.76, 'throughput': 4844.22}
+
+[INFO|callbacks.py:310] 2024-07-26 14:41:56,894 >> {'loss': 0.2996, 'learning_rate': 1.7402e-05, 'epoch': 1.79, 'throughput': 4839.66}
+
+[INFO|callbacks.py:310] 2024-07-26 14:42:08,495 >> {'loss': 0.3096, 'learning_rate': 1.6607e-05, 'epoch': 1.82, 'throughput': 4841.03}
+
+[INFO|callbacks.py:310] 2024-07-26 14:42:20,243 >> {'loss': 0.2897, 'learning_rate': 1.5822e-05, 'epoch': 1.86, 'throughput': 4841.80}
+
+[INFO|callbacks.py:310] 2024-07-26 14:42:32,392 >> {'loss': 0.2732, 'learning_rate': 1.5047e-05, 'epoch': 1.89, 'throughput': 4844.76}
+
+[INFO|callbacks.py:310] 2024-07-26 14:42:44,263 >> {'loss': 0.2990, 'learning_rate': 1.4283e-05, 'epoch': 1.92, 'throughput': 4846.92}
+
+[INFO|trainer.py:3503] 2024-07-26 14:42:44,264 >> Saving model checkpoint to saves/Phi-2-2.7B/lora/train_2024-07-26-14-29-06/checkpoint-300
+
+[INFO|tokenization_utils_base.py:2702] 2024-07-26 14:42:44,338 >> tokenizer config file saved in saves/Phi-2-2.7B/lora/train_2024-07-26-14-29-06/checkpoint-300/tokenizer_config.json
+
+[INFO|tokenization_utils_base.py:2711] 2024-07-26 14:42:44,338 >> Special tokens file saved in saves/Phi-2-2.7B/lora/train_2024-07-26-14-29-06/checkpoint-300/special_tokens_map.json
+
+[INFO|callbacks.py:310] 2024-07-26 14:42:56,011 >> {'loss': 0.3063, 'learning_rate': 1.3531e-05, 'epoch': 1.95, 'throughput': 4846.68}
+
+[INFO|callbacks.py:310] 2024-07-26 14:43:08,398 >> {'loss': 0.3135, 'learning_rate': 1.2792e-05, 'epoch': 1.98, 'throughput': 4848.39}
+
+[INFO|callbacks.py:310] 2024-07-26 14:43:20,131 >> {'loss': 0.2979, 'learning_rate': 1.2067e-05, 'epoch': 2.02, 'throughput': 4850.01}
+
+[INFO|callbacks.py:310] 2024-07-26 14:43:31,571 >> {'loss': 0.3002, 'learning_rate': 1.1356e-05, 'epoch': 2.05, 'throughput': 4851.84}
+
+[INFO|callbacks.py:310] 2024-07-26 14:43:43,212 >> {'loss': 0.2756, 'learning_rate': 1.0661e-05, 'epoch': 2.08, 'throughput': 4853.77}
+
+[INFO|callbacks.py:310] 2024-07-26 14:43:54,565 >> {'loss': 0.2650, 'learning_rate': 9.9814e-06, 'epoch': 2.11, 'throughput': 4855.46}
+
+[INFO|callbacks.py:310] 2024-07-26 14:44:06,308 >> {'loss': 0.2851, 'learning_rate': 9.3192e-06, 'epoch': 2.14, 'throughput': 4857.30}
+
+[INFO|callbacks.py:310] 2024-07-26 14:44:18,374 >> {'loss': 0.3197, 'learning_rate': 8.6747e-06, 'epoch': 2.18, 'throughput': 4858.10}
+
+[INFO|callbacks.py:310] 2024-07-26 14:44:30,339 >> {'loss': 0.2639, 'learning_rate': 8.0485e-06, 'epoch': 2.21, 'throughput': 4860.09}
+
+[INFO|callbacks.py:310] 2024-07-26 14:44:42,333 >> {'loss': 0.2650, 'learning_rate': 7.4414e-06, 'epoch': 2.24, 'throughput': 4861.17}
+
+[INFO|callbacks.py:310] 2024-07-26 14:44:54,005 >> {'loss': 0.2485, 'learning_rate': 6.8541e-06, 'epoch': 2.27, 'throughput': 4861.73}
+
+[INFO|callbacks.py:310] 2024-07-26 14:45:05,768 >> {'loss': 0.2687, 'learning_rate': 6.2872e-06, 'epoch': 2.30, 'throughput': 4863.24}
+
+[INFO|callbacks.py:310] 2024-07-26 14:45:17,680 >> {'loss': 0.2924, 'learning_rate': 5.7414e-06, 'epoch': 2.34, 'throughput': 4863.74}
+
+[INFO|callbacks.py:310] 2024-07-26 14:45:29,612 >> {'loss': 0.3003, 'learning_rate': 5.2174e-06, 'epoch': 2.37, 'throughput': 4865.05}
+
+[INFO|callbacks.py:310] 2024-07-26 14:45:41,947 >> {'loss': 0.2837, 'learning_rate': 4.7156e-06, 'epoch': 2.40, 'throughput': 4861.67}
+
+[INFO|callbacks.py:310] 2024-07-26 14:45:54,163 >> {'loss': 0.2741, 'learning_rate': 4.2366e-06, 'epoch': 2.43, 'throughput': 4863.63}
+
+[INFO|callbacks.py:310] 2024-07-26 14:46:05,506 >> {'loss': 0.2885, 'learning_rate': 3.7810e-06, 'epoch': 2.46, 'throughput': 4864.60}
+
+[INFO|callbacks.py:310] 2024-07-26 14:46:17,197 >> {'loss': 0.2883, 'learning_rate': 3.3494e-06, 'epoch': 2.50, 'throughput': 4865.52}
+
+[INFO|callbacks.py:310] 2024-07-26 14:46:29,066 >> {'loss': 0.2652, 'learning_rate': 2.9421e-06, 'epoch': 2.53, 'throughput': 4866.64}
+
+[INFO|callbacks.py:310] 2024-07-26 14:46:40,932 >> {'loss': 0.2762, 'learning_rate': 2.5597e-06, 'epoch': 2.56, 'throughput': 4867.96}
+
+[INFO|trainer.py:3503] 2024-07-26 14:46:40,933 >> Saving model checkpoint to saves/Phi-2-2.7B/lora/train_2024-07-26-14-29-06/checkpoint-400
+
+[INFO|tokenization_utils_base.py:2702] 2024-07-26 14:46:41,017 >> tokenizer config file saved in saves/Phi-2-2.7B/lora/train_2024-07-26-14-29-06/checkpoint-400/tokenizer_config.json
+
+[INFO|tokenization_utils_base.py:2711] 2024-07-26 14:46:41,018 >> Special tokens file saved in saves/Phi-2-2.7B/lora/train_2024-07-26-14-29-06/checkpoint-400/special_tokens_map.json
+
+[INFO|callbacks.py:310] 2024-07-26 14:46:53,145 >> {'loss': 0.2524, 'learning_rate': 2.2025e-06, 'epoch': 2.59, 'throughput': 4867.63}
+
+[INFO|callbacks.py:310] 2024-07-26 14:47:04,818 >> {'loss': 0.2794, 'learning_rate': 1.8710e-06, 'epoch': 2.62, 'throughput': 4868.75}
+
+[INFO|callbacks.py:310] 2024-07-26 14:47:16,513 >> {'loss': 0.2600, 'learning_rate': 1.5656e-06, 'epoch': 2.66, 'throughput': 4870.63}
+
+[INFO|callbacks.py:310] 2024-07-26 14:47:28,093 >> {'loss': 0.2608, 'learning_rate': 1.2866e-06, 'epoch': 2.69, 'throughput': 4871.89}
+
+[INFO|callbacks.py:310] 2024-07-26 14:47:40,064 >> {'loss': 0.2790, 'learning_rate': 1.0343e-06, 'epoch': 2.72, 'throughput': 4873.70}
+
+[INFO|callbacks.py:310] 2024-07-26 14:47:51,831 >> {'loss': 0.2818, 'learning_rate': 8.0896e-07, 'epoch': 2.75, 'throughput': 4874.93}
+
+[INFO|callbacks.py:310] 2024-07-26 14:48:03,317 >> {'loss': 0.2914, 'learning_rate': 6.1090e-07, 'epoch': 2.78, 'throughput': 4875.74}
+
+[INFO|callbacks.py:310] 2024-07-26 14:48:15,583 >> {'loss': 0.2987, 'learning_rate': 4.4031e-07, 'epoch': 2.82, 'throughput': 4876.80}
+
+[INFO|callbacks.py:310] 2024-07-26 14:48:27,030 >> {'loss': 0.2586, 'learning_rate': 2.9738e-07, 'epoch': 2.85, 'throughput': 4877.87}
+
+[INFO|callbacks.py:310] 2024-07-26 14:48:38,531 >> {'loss': 0.2725, 'learning_rate': 1.8228e-07, 'epoch': 2.88, 'throughput': 4878.61}
+
+[INFO|callbacks.py:310] 2024-07-26 14:48:50,470 >> {'loss': 0.2958, 'learning_rate': 9.5133e-08, 'epoch': 2.91, 'throughput': 4879.19}
+
+[INFO|callbacks.py:310] 2024-07-26 14:49:02,099 >> {'loss': 0.2822, 'learning_rate': 3.6041e-08, 'epoch': 2.94, 'throughput': 4880.38}
+
+[INFO|callbacks.py:310] 2024-07-26 14:49:14,312 >> {'loss': 0.2858, 'learning_rate': 5.0693e-09, 'epoch': 2.98, 'throughput': 4881.23}
+
+[INFO|trainer.py:3503] 2024-07-26 14:49:21,225 >> Saving model checkpoint to saves/Phi-2-2.7B/lora/train_2024-07-26-14-29-06/checkpoint-468
+
+[INFO|tokenization_utils_base.py:2702] 2024-07-26 14:49:21,299 >> tokenizer config file saved in saves/Phi-2-2.7B/lora/train_2024-07-26-14-29-06/checkpoint-468/tokenizer_config.json
+
+[INFO|tokenization_utils_base.py:2711] 2024-07-26 14:49:21,299 >> Special tokens file saved in saves/Phi-2-2.7B/lora/train_2024-07-26-14-29-06/checkpoint-468/special_tokens_map.json
+
+[INFO|trainer.py:2394] 2024-07-26 14:49:21,452 >> 
+
+Training completed. Do not forget to share your model on huggingface.co/models =)
+
+
+
+[INFO|trainer.py:3503] 2024-07-26 14:49:21,454 >> Saving model checkpoint to saves/Phi-2-2.7B/lora/train_2024-07-26-14-29-06
+
+[INFO|tokenization_utils_base.py:2702] 2024-07-26 14:49:21,519 >> tokenizer config file saved in saves/Phi-2-2.7B/lora/train_2024-07-26-14-29-06/tokenizer_config.json
+
+[INFO|tokenization_utils_base.py:2711] 2024-07-26 14:49:21,519 >> Special tokens file saved in saves/Phi-2-2.7B/lora/train_2024-07-26-14-29-06/special_tokens_map.json
+
+[WARNING|ploting.py:89] 2024-07-26 14:49:21,685 >> No metric eval_loss to plot.
+
+[WARNING|ploting.py:89] 2024-07-26 14:49:21,686 >> No metric eval_accuracy to plot.
+
+[INFO|modelcard.py:449] 2024-07-26 14:49:21,687 >> Dropping the following result as it does not have all the necessary fields:
+{'task': {'name': 'Causal Language Modeling', 'type': 'text-generation'}}
+
